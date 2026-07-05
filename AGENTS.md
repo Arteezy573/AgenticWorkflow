@@ -2,7 +2,9 @@
 These are common instructions for Jie's agents across all scenarios.
 
 ## General Guidelines
-1. When making technical decisions, do not give much weight to develoment cost. Instead, prefer quality, simplicity, robustness, scalability, and long term maintainability.
+- Never use the em dash "—". Use plain dash "-" instead.
+- When writing commit messages, NEVER auto-add your agent name as co-author. 
+- When making technical decisions, do not give much weight to develoment cost. Instead, prefer quality, simplicity, robustness, scalability, and long term maintainability.
 
 ## Jie's Opinion
 When you are working on something that would benefit from being informed by Jie's viewpoints, read ~/OPINIONS.md to understand what Jie believes.
