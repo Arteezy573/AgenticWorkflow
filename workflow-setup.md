@@ -5,9 +5,9 @@
 1. Install 'Hack Nerd Font'. My lua config file need this as prerequisite.
 1. Add `..\AGENTS.md` as Global Memory File under `$env:USERPROFILE`.
 1. Create symbolic link for claude code. it used a different path for global memory file): `New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\CLAUDE.md" -Target "$env:USERPROFILE\AGENTS.md"`.
-1. Add `..\Opinion.md` under `$env:USERPROFILE` to persist your taste. My AGENTS.md need this.
+1. Add `..\OPINIONS.md` under `$env:USERPROFILE` to persist your taste. My AGENTS.md need this.
 1. Add `..\VOICE.md` under `$env:USERPROFILE` as voice profile. My AGENTS.md need this.
-1. Add Lavish skill for code planning: `npx skills add kunchenguid/lavish-axi --skill lavish`.
+1. Add Lavish skill for code planning: `npx skills add kunchenguid/lavish-axi --skill lavish -g`. The `-g` installs it globally (user-level) so it is available everywhere; without it the skill installs into whatever directory you run the command from.
 1. Install no-mistake. It will be used after agents complete code generation: `irm https://raw.githubusercontent.com/kunchenguid/no-mistakes/main/docs/install.ps1 | iex`.
 1. Install Good night, have fun: `npm install -g gnhf`. This is used to do long running task.
 
