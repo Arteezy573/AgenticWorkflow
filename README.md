@@ -37,14 +37,14 @@ Full steps are in [`workflow-setup.md`](workflow-setup.md). The shape of it:
    set to `"500000"` and `CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY` set to `"1"`.
 
 4. **Agent tooling** — Lavish (planning), no-mistakes (post-generation review), gnhf (long-running
-   tasks), Herdr (agent workspace manager) with its agent integrations so sessions resume after a
-   restart:
+   tasks), Treehouse (git worktree pool), Herdr (agent workspace manager) with its agent integrations
+   so sessions resume after a restart:
 
    ```powershell
    herdr integration install claude
    ```
 
-Optional later additions (tmux, Neovim, Whisper voice input, Treehouse, firstmate) are listed at the
+Optional later additions (tmux, Neovim, Whisper voice input, firstmate) are listed at the
 bottom of the setup doc.
 
 ## Why this exists
