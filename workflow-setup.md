@@ -22,6 +22,7 @@
 1. Install 'Hack Nerd Font'. My lua config file need this as prerequisite.
 1. Add `..\AGENTS.md` as Global Memory File under `$env:USERPROFILE`.
 1. Create symbolic link for claude code. it used a different path for global memory file): `New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\CLAUDE.md" -Target "$env:USERPROFILE\AGENTS.md"`.
+1. Create symbolic link for GitHub Copilot CLI. Its global memory file is `~/.copilot/copilot-instructions.md`: `New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.copilot\copilot-instructions.md" -Target "$env:USERPROFILE\AGENTS.md"`.
 1. Add these to the `env` block of Claude Code's global settings `$env:USERPROFILE\.claude\settings.json`: `"CLAUDE_CODE_AUTO_COMPACT_WINDOW": "500000"` (auto-compact at 500K tokens) and `"CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"` (no feedback survey prompts).
 1. Add `..\OPINIONS.md` under `$env:USERPROFILE` to persist your taste. My AGENTS.md need this.
 1. Add `..\VOICE.md` under `$env:USERPROFILE` as voice profile. My AGENTS.md need this.

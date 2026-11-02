@@ -11,7 +11,7 @@ This repo is the source of truth. Clone it onto a fresh machine, follow
 | File | Purpose |
 | --- | --- |
 | [`workflow-setup.md`](workflow-setup.md) | The setup checklist — run through it top to bottom to rebuild the workflow. |
-| [`AGENTS.md`](AGENTS.md) | Global agent memory. Installed to `$env:USERPROFILE` so every agent (Claude Code, Codex, etc.) shares the same baseline instructions. |
+| [`AGENTS.md`](AGENTS.md) | Global agent memory. Installed to `$env:USERPROFILE` so every agent (Claude Code, GitHub Copilot, Codex, etc.) shares the same baseline instructions. |
 | [`OPINIONS.md`](OPINIONS.md) | My viewpoints. Agents read this when a task benefits from my taste and judgment. |
 | [`VOICE.md`](VOICE.md) | My voice profile. Agents read this when writing or posting under my identity. |
 | [`.wezterm.lua`](.wezterm.lua) | WezTerm terminal config (font, color scheme, keybindings). |
@@ -26,11 +26,12 @@ Full steps are in [`workflow-setup.md`](workflow-setup.md). The shape of it:
 1. **Core tools** — GitHub CLI, Sublime Merge, Azure CLI, Git Bash.
 2. **Terminal** — WezTerm + Hack Nerd Font, using [`.wezterm.lua`](.wezterm.lua) as the config.
 3. **Agent memory** — place [`AGENTS.md`](AGENTS.md), [`OPINIONS.md`](OPINIONS.md), and
-   [`VOICE.md`](VOICE.md) under `$env:USERPROFILE`. Claude Code reads `~/.claude/CLAUDE.md`, so it gets
-   a symlink to `AGENTS.md`:
+   [`VOICE.md`](VOICE.md) under `$env:USERPROFILE`. Claude Code reads `~/.claude/CLAUDE.md` and
+   GitHub Copilot CLI reads `~/.copilot/copilot-instructions.md`, so each gets a symlink to `AGENTS.md`:
 
    ```powershell
    New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.claude\CLAUDE.md" -Target "$env:USERPROFILE\AGENTS.md"
+   New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.copilot\copilot-instructions.md" -Target "$env:USERPROFILE\AGENTS.md"
    ```
 
    Claude Code's global `settings.json` also gets two `env` entries: `CLAUDE_CODE_AUTO_COMPACT_WINDOW`
